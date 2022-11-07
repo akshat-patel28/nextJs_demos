@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
 // this file will catch all routes after /docs
+// if file name is [[...params]].js which is optional catch all routes
+//    * this will render same file for /docs path
 export default function Documents() {
   const router = useRouter();
   const { params = [] } = router.query;
