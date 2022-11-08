@@ -22,7 +22,12 @@ export default function Home() {
           <Link style={{ marginLeft: "10px" }} href="/product">
             Product
           </Link>
-          <button onClick={handleClick}>Place Order</button>
+          <button style={{ marginLeft: "10px" }} onClick={handleClick}>
+            Place Order
+          </button>
+          <Link style={{ marginLeft: "10px" }} href="/users">
+            Users
+          </Link>
         </nav>
       </header>
       <main className={styles.main}>
