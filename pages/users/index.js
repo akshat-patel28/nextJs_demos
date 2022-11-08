@@ -1,4 +1,5 @@
 import axios from "axios";
+import User from "../../components/user/user";
 
 // users will be populated at build time by getStaticProps()
 export default function UserList({ users }) {
@@ -6,7 +7,7 @@ export default function UserList({ users }) {
     <>
       <ul>
         {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
+          <User key={user.id} user={user} />
         ))}
       </ul>
     </>
