@@ -31,7 +31,6 @@ export async function getStaticPaths() {
   const res = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
   const data = res.data;
   const paths = data.map((post) => ({ params: { postId: `${post.id}` } }));
-  console.log(paths);
   return { paths, fallback: false };
 }
 
