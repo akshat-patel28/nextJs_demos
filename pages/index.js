@@ -28,6 +28,9 @@ export default function Home() {
           <Link style={{ marginLeft: "10px" }} href="/users">
             Users
           </Link>
+          <Link style={{ marginLeft: "10px" }} href="/post">
+            Posts
+          </Link>
         </nav>
       </header>
       <main className={styles.main}>
