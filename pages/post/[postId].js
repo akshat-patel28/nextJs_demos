@@ -46,10 +46,16 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { params } = context;
-  const res = await axios.get(
+  const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${params.postId}`
   );
-  const data = res.data;
+  // need to find way to use notFound with axios
+  const data = await res.json();
+  if (!data.id) {
+    return {
+      notFound: true,
+    };
+  }
 
   return { props: { post: data } };
 }
