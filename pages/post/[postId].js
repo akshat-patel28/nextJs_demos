@@ -52,6 +52,7 @@ export async function getStaticProps(context) {
   // need to find way to use notFound with axios
   const data = await res.json();
   if (!data.id) {
+    // this will render 404 page if id is wrong
     return {
       notFound: true,
     };
