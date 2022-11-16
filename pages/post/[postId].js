@@ -1,4 +1,5 @@
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Post({ post }) {
@@ -11,6 +12,7 @@ export default function Post({ post }) {
   }
   return (
     <div>
+      <Link href="/post">Go Back</Link>
       <h1>
         {post.id}. {post.title}
       </h1>
