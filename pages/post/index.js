@@ -17,5 +17,5 @@ export default function PostList({ posts }) {
 export async function getStaticProps() {
   const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
   const data = res.data;
-  return { props: { posts: data } };
+  return { props: { posts: data }, revalidate: 10 }; // revalidate key will regenerate page every 10s
 }
