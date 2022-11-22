@@ -34,6 +34,9 @@ export default function Home() {
           <Link style={{ marginLeft: "10px" }} href="/comments">
             Commnets
           </Link>
+          <Link style={{ marginLeft: "10px" }} href="/albums">
+            Albums
+          </Link>
         </nav>
       </header>
       <main className={styles.main}>
