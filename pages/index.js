@@ -39,6 +39,9 @@ export default function Home() {
           <Link style={{ marginLeft: "10px" }} href="/albums">
             Albums
           </Link>
+          <Link style={{ marginLeft: "10px" }} href="/dashboard">
+            Dashboard
+          </Link>
           {session ? (
             <button style={{ marginLeft: "10px" }} onClick={() => signOut()}>
               Sign out
