@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
+import { signIn, signOut } from "next-auth/react";
 
 export default function Home() {
   const router = useRouter();
@@ -37,6 +38,14 @@ export default function Home() {
           <Link style={{ marginLeft: "10px" }} href="/albums">
             Albums
           </Link>
+          <button style={{ marginLeft: "10px" }} onClick={() => signIn()}>
+            {" "}
+            {/*  can added provider name in thid method to signin without sign in UI i.e.signin('github') (if we ahve only one provider for auth)*/}
+            Sign in
+          </button>
+          <button style={{ marginLeft: "10px" }} onClick={() => signOut()}>
+            Sign out
+          </button>
         </nav>
       </header>
       <main className={styles.main}>
