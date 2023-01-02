@@ -1,11 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function Home() {
   const router = useRouter();
+  const { data: session } = useSession();
+  // console.log(session); // has user details
   const handleClick = () => {
     router.push("/product");
   };
@@ -34,6 +36,22 @@ export default function Home() {
           <Link style={{ marginLeft: "10px" }} href="/comments">
             Commnets
           </Link>
+          <Link style={{ marginLeft: "10px" }} href="/albums">
+            Albums
+          </Link>
+          <Link style={{ marginLeft: "10px" }} href="/dashboard">
+            Dashboard
+          </Link>
+          {session ? (
+            <button style={{ marginLeft: "10px" }} onClick={() => signOut()}>
+              Sign out
+            </button>
+          ) : (
+            /*  can added provider name in thid method to signin without sign in UI i.e.signin('github') (if we ahve only one provider for auth)*/
+            <button style={{ marginLeft: "10px" }} onClick={() => signIn()}>
+              Sign in
+            </button>
+          )}
         </nav>
       </header>
       <main className={styles.main}>
