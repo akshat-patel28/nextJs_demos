@@ -24,20 +24,20 @@ export const authOptions = {
         // return null
       },
       // if we are using not custom sign in page
-      credentials: {
-        username: { label: "Email", type: "email", placeholder: "email" },
-        password: {
-          label: "Password",
-          type: "password",
-          placeholder: "password",
-        },
-      }, // remove credentials for custom sign in page
+      // credentials: {
+      //   username: { label: "Email", type: "email", placeholder: "email" },
+      //   password: {
+      //     label: "Password",
+      //     type: "password",
+      //     placeholder: "password",
+      //   },
+      // }, // remove credentials for custom sign in page
     }),
   ],
   // path for custom sign in page
-  // pages: {
-  //   signIn: "/auth/signin",
-  // },
+  pages: {
+    signIn: "/auth/signin",
+  },
 };
 export default NextAuth(authOptions);
 

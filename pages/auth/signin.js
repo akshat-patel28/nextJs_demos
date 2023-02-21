@@ -1,4 +1,4 @@
-import { getCsrfToken } from "next-auth/react";
+import { getCsrfToken, signIn } from "next-auth/react";
 
 export default function SignIn({ csrfToken }) {
   return (
@@ -15,6 +15,7 @@ export default function SignIn({ csrfToken }) {
         </label>
         <button type="submit">Sign in</button>
       </form>
+      <button onClick={() => signIn("github")}>Sign in with Github</button>
     </>
   );
 }
