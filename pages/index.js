@@ -7,7 +7,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 export default function Home() {
   const router = useRouter();
   const { data: session } = useSession();
-  console.log(session); // has user details
+  // console.log(session); // has user details
   const handleClick = () => {
     router.push("/product");
   };

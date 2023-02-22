@@ -1,7 +1,6 @@
 import { getCsrfToken, signIn } from "next-auth/react";
 
 export default function SignIn({ csrfToken }) {
-  console.log(csrfToken);
   return (
     <>
       <form method="POST" action="/api/auth/callback/credentials">
