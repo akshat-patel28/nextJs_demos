@@ -1,5 +1,6 @@
 import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions = {
@@ -11,6 +12,10 @@ export const authOptions = {
       clientSecret: process.env.GITHUB_SECRET,
     }),
     // ...add more providers here
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+    }),
     CredentialsProvider({
       name: "credentials",
       async authorize(credentials, req) {
@@ -23,7 +28,7 @@ export const authOptions = {
         // else return null
         // return null
       },
-      // if we are using not custom sign in page
+      // if we are not using custom sign in page
       // credentials: {
       //   username: { label: "Email", type: "email", placeholder: "email" },
       //   password: {

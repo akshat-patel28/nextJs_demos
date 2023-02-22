@@ -1,6 +1,7 @@
 import { getCsrfToken, signIn } from "next-auth/react";
 
 export default function SignIn({ csrfToken }) {
+  console.log(csrfToken);
   return (
     <>
       <form method="POST" action="/api/auth/callback/credentials">
@@ -14,8 +15,9 @@ export default function SignIn({ csrfToken }) {
           <input name="password" type="password" />
         </label>
         <button type="submit">Sign in</button>
+        <button onClick={() => signIn("github")}>Sign in with Github</button>
+        <button onClick={() => signIn("google")}>Sign in with Google</button>
       </form>
-      <button onClick={() => signIn("github")}>Sign in with Github</button>
     </>
   );
 }
